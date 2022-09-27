@@ -33,6 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
+
     /**
      * The attributes that should be cast.
      *
