@@ -28,13 +28,14 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        info(print_r($request->task, true));
+        info(print_r($request->all(), true));
         $task = new Task;
 
         $task->task = $request->task;
 
         $task->save();
         return $request->task;
+        return 'yolo!';
     }
 
     /**
@@ -57,10 +58,10 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        return print_r($task->task);
+        // return print_r($task->task);
 
-        // $task->task = $request->task;
-        // $task->save();
+        $task->task = $request->task;
+        $task->save();
     }
 
     /**

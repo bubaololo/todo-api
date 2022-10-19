@@ -23,8 +23,9 @@ class StoreTaskRequest extends FormRequest
      */
     public function rules()
     {
+        info('rules');
         return [
-            // 'task' => 'string',
+            'task' => 'string',
         ];
     }
 }
